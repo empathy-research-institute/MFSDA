@@ -358,7 +358,8 @@ for pp=2:p0 % go through all covariate
     [~,~,Lpval_fdr]=stat_fdr(Lpval);
     indd_thres=-log10(Lpval)>=thres;
     if sum(indd_thres)<=10
-        Lpval_area{1,pp-1}=[sum(indd_thres)];
+        areas=[sum(indd_thres)];
+        Lpval_area{1,pp-1}=areas;
     else
         Coord_thres=Coord(indd_thres,:);
         clust = zeros(size(Coord_thres,1),4);
